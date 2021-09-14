@@ -4,4 +4,4 @@ function myFunc(x = 10) { // if you not passing value any it will be set 10 but 
     return x;
 }
 console.log(myFunc(20));
-console.log(myFunc(undefined));
+console.log(myFunc());
