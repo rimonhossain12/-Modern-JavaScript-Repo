@@ -1,6 +1,16 @@
+const displayLocalStorageCart = () => {
+    const cart = getCart();
+    for (const name in cart) {
+        displayProduct(name);
+    }
+}
+
 const addItem = () => {
     const nameField = document.getElementById('product-name');
     const name = nameField.value;
+    if (!name) {
+        return;
+    }
     // display in the ui
     displayProduct(name);
 
@@ -8,6 +18,7 @@ const addItem = () => {
     // add to local storage
     addProductToCart(name);
 
+    // clear 
     nameField.value = '';
 }
 
@@ -34,3 +45,7 @@ const addProductToCart = name => {
     const cartStringified = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringified);
 }
+
+
+
+displayLocalStorageCart();
