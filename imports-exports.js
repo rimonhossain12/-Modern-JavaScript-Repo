@@ -1,8 +1,12 @@
-//  imports/exports
+// import/exports
 
-// import { pi as varA, a as varB} from './external.js';
-// console.log(varA, varB);
+// import { pi as varPi, a as varA } from './external.js'; // named import
+// console.log(varA, varPi);
 
-import * as test from './external.js'; //  name import 
-console.log(test);
-// default import and exports;
+// import * as test from "./external.js";
+
+// console.log(test.a);
+
+import external, { a, pi } from "./external.js";
+console.log(a, pi);
+external();
